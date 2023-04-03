@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width:100%;
+}
+body{
+    background-color: rgb(194, 129, 255);
+}
+.container{
+    display: grid;
+    gap: 15px;
+}
+/* header */
+.header{
+    display: grid;
+    grid-template-areas:
+    "feature1 feature2"
+    "feature1 feature4";
+}
+.feature1{
+    grid-area: feature1;
+    min-height: 300px;
+    background-image: url(masjid1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    
+}
+.feature1 > * {
+    display: none;
+}
+.feature{
+    place-content: center;
+}
+.feature2{
+    grid-area: feature2;
+    background-image: url(masjid4.jpg);
+    background-size: cover;
+
+}
+.feature4{
+    grid-area: feature4;
+    background-image: url(masjid3.jpg);
+    background-size: cover; 
+}
+/* navigasi */
+nav {
+    display: flex;
+    color: bisque;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px; 
+    text-align: left; 
+}
+.menu{
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+.menu ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+   gap: 4px;
+}
+.menu a {
+    display: block;
+    /* background-color: rgb(19, 0, 0); */
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    color: beige;
+    text-transform: uppercase;
+    
+}
+.menu ul li a:hover{
+    color: rgb(1, 75, 75);
+}
+/* menu bar */
+.menu-toggle{
+    display: none;
+    flex-direction: column ;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+transform:rotate(45deg) translate(-1px,-1px) ;
+
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+transform:rotate(-45deg) translate(-1px,0);
+
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform:scale(0)
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: bisque;
+    border-radius: 3px;
+    transition: all 0.3s;
+
+}
+
+
+/* responsive */
+@media screen and (max-width: 700px) {
+.menu{
+    order: +1;
+    grid-template-columns: 1fr;
+} 
+.menu .brand {
+    display: none;
+}
+
+}
+@media screen and (max-width: 500px){
+    nav ul a {
+        position: absolute;
+        text-align: center;
+        right: 0;
+        top: 0;
+        left: 80%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.26);
+        transform: translateX(100%);
+    
+    } 
+    .menu-toggle{display: flex;}
+    .inputhome {width: 50%;}
+    .menu{
+        order: -1;
+        justify-items: end;
+    }
+    body {
+        background-image:url(masjid1.jpg), url(masjid3.jpg),url(masjid4.jpg);
+        ;
+        image-orientation: flip;
+}
+    header{
+        display: none;
+    }
+}

@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+h2{
+    color: rgb(255, 189, 6);
+    font-size: 12px;
+}
+h3{
+    color: rgb(10, 45, 243);
+    font-size: 12px;
+}
+nav {
+    display: flex;
+    background-color: blueviolet;
+    color: bisque;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px; 
+    text-align: left; 
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    color:bisque ;
+    list-style: none;
+    width: 27%;
+    justify-content: space-between;
+    text-align: right;
+}
+nav ul li a {
+    color:bisque ;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(1, 75, 75);
+}
+img{
+    height: 60%;
+    width: 60%;
+}
+.gambar1 {
+    text-align: center;
+}
+.gambar2 {
+    text-align: center;
+}
+.gabungan {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.bagan1{
+    padding: 50px;
+    text-align: justify;
+}
+.bagan2{
+    padding: 50px;
+    text-align: justify;
+}
+.bawah{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    border-collapse: collapse;
+    width: 45%;
+    margin-bottom: 20px;
+    padding:8px;
+    border:rgb(255, 3, 3) solid 2px;
+    justify-content: center;
+    align-items: center;
+}
+.tabel1{
+    border:red 1px solid ;
+    border-collapse: collapse;
+}
+.tabel2{
+    border-collapse: collapse;
+    border:red 1px solid ;
+    text-align: center;
+}
+
+.inputhome {text-align: center;}
+
+/* menu bar */
+.menu-toggle{
+    display: none;
+    flex-direction: column ;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+transform:rotate(45deg) translate(-1px,-1px) ;
+
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+transform:rotate(-45deg) translate(-1px,0);
+
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform:scale(0)
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: bisque;
+    border-radius: 3px;
+    transition: all 0.3s;
+
+}
+
+/* responsive */
+/* menu */
+@media screen and (max-width: 700px) {
+    nav ul a {
+         position: absolute;
+         text-align: center;
+         right: 0;
+         top: 0;
+         left: 80%;
+         height: 100vh;
+         justify-content: space-evenly;
+         flex-direction: column;
+         align-items: center;
+         z-index: -1;
+         background-color: rgba(0, 0, 0, 0.26);
+         transform: translateX(100%);
+
+    } 
+    .menu-toggle{display: flex;}
+    .inputhome {width: 50%;}
+}
+
+@media screen and (max-width: 768px){
+    .gabungan{
+    grid-template-columns: 768px;
+    display: block;
+}
+
+}
+
+@media screen and (max-width: 500px){
+    .gambar1 .gambar2{
+    height: 30%;
+    width: 30%;}
+    .tabel{ 
+        grid-template-columns: 15%;
+        display: block;}
+    .table{
+            border-collapse: collapse;
+            width: 45%;
+            margin-bottom: 20px;
+            padding:8px;
+            border:rgb(255, 3, 3) solid 2px;
+            justify-content: center;
+            align-items: center;
+            text-align: 12px;
+            }
+    .inputhome{text-align: center;}
+        }

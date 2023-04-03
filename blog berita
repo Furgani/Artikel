@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>berita terkini</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    <body>
+        <div class="wrap"> </div>
+            <div class="header"> </div>
+                <h1>berita</h1>
+                <p>berita terkini</p>
+            <div class="menu">
+            <ul> 
+            <li><a href="laman awal"> </a></li>
+            <li><a href="pencarian"> </a></li>
+            <li><a href="tentang"> </a></li>
+            <li><a href="kontak"> </a></li>
+            </ul>
+        </div>
+    </body>
+</html>

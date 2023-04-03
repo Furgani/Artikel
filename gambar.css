@@ -1,0 +1,191 @@
+body{
+    margin: 0;  
+}
+nav {
+    display: flex;
+    background-color: blueviolet;
+    color: bisque;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px; 
+    text-align: left;
+    margin-top: 0%;
+}
+nav ul{
+    display: flex;
+    color:bisque ;
+    list-style: none;
+    width: 27%;
+    justify-content: space-between;
+    text-align: right;
+}
+nav ul li a {
+    color:bisque ;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(1, 75, 75);
+}
+/* menu bar */
+.menu-toggle{
+    display: none;
+    flex-direction: column ;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+transform:rotate(45deg) translate(-1px,-1px) ;
+
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+transform:rotate(-45deg) translate(-1px,0);
+
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform:scale(0)
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: bisque;
+    border-radius: 3px;
+    transition: all 0.3s;
+
+}
+
+/* isi */
+.image{
+    display: flex;
+    width: 100%;
+    transition: 2s;
+}
+.image img{
+    width: 250%;
+}
+img{
+    width: 100%;
+}
+.gabungan{
+    width: 290px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+#slide-1:target ~ .image{
+    margin-left: 0px;
+}
+#slide-2:target ~ .image{
+    margin-left: -100%;
+}
+#slide-3:target ~ .image{
+    margin-left: -200%;
+}#slide-4:target ~ .image{
+    margin-left: -300%;
+}
+#slide-5:target ~ .image{
+    margin-left: -400%;
+}
+#slide-6:target ~ .image{
+    margin-left: -500%;
+}
+/* #slide-7:target ~ .image{
+    margin-left: -600%;
+} */
+.navigasigambar a{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-color: aqua;
+    font-size: 0px;
+    border-radius: 50%;
+    margin: 3px;
+
+}
+.navigasigambar a:hover {
+    background-color: black ;
+    transition: 1s;
+}
+
+/* responsive */
+/* menu */
+@media screen and (max-width: 700px) {
+    nav ul a {
+         position: absolute;
+         text-align: center;
+         right: 0;
+         top: 0;
+         left: 80%;
+         height: 100vh;
+         justify-content: space-evenly;
+         flex-direction: column;
+         align-items: center;
+         z-index: -1;
+         background-color: rgba(0, 0, 0, 0.26);
+         transform: translateX(100%);
+
+    } 
+    .menu-toggle{display: flex;}
+    .inputhome {width: 50%;}
+}
+
+@media screen and (max-width: 768px){
+    .gabungan{
+    grid-template-columns: 768px;
+    display: block;
+    width: 40%;
+}
+    .image {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        gap: 16px;
+
+    }
+    .navigasigambar{
+        display: none;
+    }
+    #slide-1:target ~ .image{
+        margin-left: 0px;
+    }
+    #slide-2:target ~ .image{
+        margin-left: 20%;
+    }
+    #slide-3:target ~ .image{
+        margin-left: 20%;
+    }#slide-4:target ~ .image{
+        margin-left: 20%;
+    }
+    #slide-5:target ~ .image{
+        margin-left: 20%;
+    }
+    #slide-6:target ~ .image{
+        margin-left: 20%;
+    }
+}
+
